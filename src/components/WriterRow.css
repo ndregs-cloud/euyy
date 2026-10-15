@@ -1,0 +1,39 @@
+.writer-list > .writer-row + .writer-row {
+  border-top: var(--border-hairline);
+}
+
+.writer-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+}
+
+.writer-row-text {
+  min-width: 0;
+}
+
+.writer-row-name {
+  display: block;
+  font-size: var(--text-14);
+  font-weight: var(--weight-medium);
+  color: var(--color-logo-ink);
+}
+
+.writer-row-bio {
+  margin-top: 2px;
+  font-size: var(--text-13);
+  line-height: var(--leading-ui);
+  color: var(--color-reading-gray);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.writer-row .btn {
+  align-self: start;
+  margin-top: 2px;
+}

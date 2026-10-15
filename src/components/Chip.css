@@ -1,0 +1,70 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  max-width: 100%;
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  line-height: 1;
+  color: var(--color-reading-gray);
+  background-color: transparent;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  padding: 7px var(--space-4);
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--motion-fast) var(--easing),
+    border-color var(--motion-fast) var(--easing),
+    color var(--motion-fast) var(--easing);
+}
+
+.chip:hover {
+  background-color: var(--color-paper-sunk);
+  border-color: var(--color-line-strong);
+  color: var(--color-logo-ink);
+  text-decoration: none;
+}
+
+.chip--sm {
+  font-size: var(--text-13);
+  padding: 5px var(--space-3);
+}
+
+.chip--md {
+  font-size: var(--text-14);
+}
+
+.chip--lg {
+  font-size: var(--text-15);
+  padding: 9px var(--space-5);
+}
+
+.chip-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip-count {
+  flex: none;
+  font-size: var(--text-12);
+  color: var(--color-reading-gray);
+  opacity: 0.8;
+}
+
+.chip.is-active {
+  background-color: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-on-ink);
+}
+
+.chip.is-active .chip-count {
+  color: var(--color-on-ink);
+  opacity: 0.7;
+}
+
+.chip.is-active:hover {
+  background-color: #000000;
+  color: var(--color-on-ink);
+}

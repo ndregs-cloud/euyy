@@ -1,0 +1,130 @@
+.write {
+  padding-block: var(--space-10) var(--section-y);
+}
+
+.write-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+}
+
+.write-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.write-form {
+  display: grid;
+  gap: var(--space-5);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+/* Borderless fields: the paper is the input. The shared blue focus ring is
+   the only indication drawn, per the system's focus guidance. */
+.write-field {
+  width: 100%;
+  padding: var(--space-2) var(--space-2);
+  background-color: transparent;
+  border: 0;
+  border-radius: var(--radius-micro);
+  color: var(--color-logo-ink);
+  transition: background-color var(--motion-fast) var(--easing);
+}
+
+.write-field::placeholder {
+  color: var(--color-reading-gray);
+  opacity: 0.62;
+}
+
+.write-field:hover {
+  background-color: var(--color-ink-wash);
+}
+
+.write-field:focus {
+  background-color: var(--color-surface-alt);
+}
+
+.write-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+.write-dek {
+  font-family: var(--font-body);
+  font-size: var(--text-lede);
+  line-height: var(--leading-snug);
+  color: var(--color-reading-gray);
+}
+
+.write-body {
+  min-height: 340px;
+  font-family: var(--font-body);
+  font-size: var(--text-read);
+  line-height: var(--leading-read);
+  resize: vertical;
+}
+
+.write-topics {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.write-hint code {
+  font-family: var(--font-body);
+  font-size: var(--text-13);
+  color: var(--color-ink-soft);
+  background-color: var(--color-paper-sunk);
+  padding: 1px var(--space-1);
+  border-radius: var(--radius-micro);
+}
+
+.write-note {
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-surface-alt);
+  border: var(--border-hairline);
+  border-left: 3px solid var(--color-ink);
+  border-radius: var(--radius-standard);
+  font-size: var(--text-14);
+  line-height: var(--leading-ui);
+  color: var(--color-ink-soft);
+}
+
+.write-note--warn {
+  border-left-color: var(--color-green);
+}
+
+.write-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: var(--space-5);
+  border-top: var(--border-hairline);
+}
+
+.write-foot-right {
+  text-align: right;
+}
+
+@media (max-width: 639px) {
+  .write-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .write-foot {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .write-foot-right {
+    text-align: left;
+  }
+}

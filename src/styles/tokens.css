@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Margin · Design tokens
+   --------------------------------------------------------------------------
+   Single source of truth for the design system. Every visual decision in the
+   app resolves to a token here — no component hard-codes a hex value, a font
+   size, or a spacing number.
+
+   Evidence key (from the Medium design system spec):
+     [obs]  = observed in supplied branding/component data
+     [inf]  = reasonable inference, documented in README.md
+   ========================================================================== */
+
+:root {
+  /* Light only. The supplied branding evidence explicitly indicates a light
+     color scheme; no dark palette is defined on purpose. [obs] */
+  color-scheme: light;
+
+  /* -- Colour · brand and semantic roles -------------------------------- */
+  --color-paper: #f7f4ed; /* Surface: page background, editorial canvas [obs] */
+  --color-ink: #191919; /* Primary action + high-contrast border/ring [obs] */
+  --color-logo-ink: #242424; /* Wordmark, headings, long-form reading text [obs] */
+  --color-green: #1a8917; /* Brand accent, positive action moments [obs] */
+  --color-green-deep: #156d12; /* Hover / pressed green [obs] */
+  --color-reading-gray: #6b6b6b; /* UI body copy, deks, meta [obs] */
+  --color-link: #1a73e8; /* Text links [obs] */
+  --color-on-ink: #ffffff; /* Text and icons on ink surfaces [obs] */
+
+  /* -- Colour · derived warm neutrals ------------------------------------
+     No new hues, no cool grays: every neutral below is warmed toward the
+     paper canvas so the system stays editorial. [inf] */
+  --color-surface-alt: #fcfaf4; /* Barely-differentiated container fill */
+  --color-paper-sunk: #efeadd; /* Chips, quiet fills, illustration ground */
+  --color-paper-deep: #e2dac6; /* Stronger quiet fill, thumbnail ground */
+  --color-ink-soft: #3d3d3d; /* Secondary emphasis text */
+
+  /* Hairlines. Ink at low alpha separates surfaces without elevation. [inf] */
+  --color-line: rgba(25, 25, 25, 0.14);
+  --color-line-soft: rgba(25, 25, 25, 0.08);
+  --color-line-strong: rgba(25, 25, 25, 0.34);
+  --color-ink-wash: rgba(25, 25, 25, 0.05); /* Hover wash on quiet controls */
+  --color-green-wash: rgba(26, 137, 23, 0.12); /* Selected-state wash */
+  --color-selection: rgba(26, 137, 23, 0.18); /* Text selection */
+
+  /* -- Typography --------------------------------------------------------
+     Sohne is a licensed face; the stack prefers it and degrades to
+     Helvetica Neue, then to Arimo (bundled, Helvetica-metric) so the site
+     reads the same on machines without either. [obs + inf] */
+  --font-display: 'Söhne', 'Sohne', 'Helvetica Neue', Helvetica, Arimo,
+    'Segoe UI', Arial, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arimo, 'Segoe UI', Arial,
+    sans-serif;
+
+  /* Scale */
+  --text-12: 12px;
+  --text-13: 13px;
+  --text-14: 14px; /* UI body — observed value [obs] */
+  --text-15: 15px;
+  --text-16: 16px;
+  --text-18: 18px;
+  --text-20: 20px;
+  --text-24: 24px;
+  --text-32: 32px;
+  --text-40: 40px;
+  --text-48: 48px;
+  --text-64: 64px;
+
+  /* Fluid display sizes. The hero lands on the observed 120px at desktop and
+     steps down for tablet and mobile rather than disappearing. [obs + inf] */
+  --text-hero: clamp(48px, 8.4vw, 120px);
+  --text-page-title: clamp(36px, 5.2vw, 72px);
+  --text-article-title: clamp(30px, 4vw, 48px);
+  --text-lede: clamp(18px, 1.5vw, 24px);
+  --text-read: clamp(18px, 1.25vw, 20px); /* Long-form measure */
+
+  /* Weight */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Line height */
+  --leading-hero: 1.02;
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --leading-ui: 1.5;
+  --leading-read: 1.72;
+
+  /* Letter spacing — headings tighten slightly, UI stays default [obs] */
+  --tracking-hero: -0.03em;
+  --tracking-tight: -0.018em;
+  --tracking-normal: 0;
+
+  /* -- Spacing · 4px base unit ------------------------------------------ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Vertical rhythm between page sections: large, calm gaps [inf] */
+  --section-y: clamp(48px, 6.5vw, 96px);
+
+  /* -- Layout ------------------------------------------------------------ */
+  --container: 1192px; /* Wide editorial container [inf] */
+  --container-read: 728px; /* Long-form measure [inf] */
+  --aside-width: 320px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --nav-height: 60px;
+
+  /* -- Border radius ---------------------------------------------------- */
+  --radius-micro: 4px; /* [obs] */
+  --radius-standard: 4px; /* [obs] */
+  --radius-pill: 1386px; /* Observed CTA value: effectively infinite [obs] */
+
+  /* -- Depth & elevation -------------------------------------------------
+     The system is intentionally flat. Depth is expressed as solid ink rings
+     and whitespace, never as a shadow stack. [obs] */
+  --shadow-none: none;
+  --border-ink: 1px solid var(--color-ink);
+  --border-hairline: 1px solid var(--color-line);
+  --border-hairline-soft: 1px solid var(--color-line-soft);
+  --border-strong: 1px solid var(--color-line-strong);
+
+  /* Focus: simple high-contrast ring in the link blue [inf] */
+  --focus-ring: 2px solid var(--color-link);
+  --focus-offset: 2px;
+
+  /* -- Motion · restrained, almost invisible ----------------------------- */
+  --motion-fast: 110ms;
+  --motion: 170ms;
+  --easing: cubic-bezier(0.2, 0, 0.2, 1);
+
+  /* -- Layering ---------------------------------------------------------- */
+  --z-nav: 20;
+}

@@ -1,0 +1,21 @@
+.membership-teaser {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  padding: var(--space-6);
+  background-color: var(--color-surface-alt);
+  border: var(--border-hairline);
+  border-radius: var(--radius-standard);
+}
+
+.membership-teaser-title {
+  font-size: var(--text-20);
+}
+
+.membership-teaser .t-body {
+  margin-bottom: var(--space-2);
+}
+
+.membership-teaser .btn {
+  justify-self: start;
+}

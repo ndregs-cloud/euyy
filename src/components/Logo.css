@@ -1,0 +1,36 @@
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  color: var(--color-logo-ink);
+  text-decoration: none;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.logo--md {
+  font-size: var(--text-24);
+}
+
+.logo--sm {
+  font-size: var(--text-20);
+}
+
+.logo--lg {
+  font-size: var(--text-32);
+}
+
+.logo-dot {
+  width: 0.22em;
+  height: 0.22em;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  transform: translateY(-0.08em);
+}
